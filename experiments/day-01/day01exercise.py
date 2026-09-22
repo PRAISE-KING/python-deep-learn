@@ -209,7 +209,7 @@ print(other)
 
 # Does
 
-numbers + [3]
+# numbers + [3]
 
 # modify the list?
 # Or create another one?
