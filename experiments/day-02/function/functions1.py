@@ -22,7 +22,94 @@
 # 12. Functions can be used to implement functional programming concepts, such as higher-order functions and closures. Higher-order functions are functions that take other functions as input or return functions as output, while closures are functions that capture the local variables of their enclosing scope.
 
 def greet(name):
-    """This function takes a name as input and prints a greeting message."""
+    """This function takes a name as input and prints a greeting message.""" # decostring - describes what the fuction is all about.
     print(f"Hello, {name}! Welcome to the world of functions.")
 
-greet("PRAISEKING")
+greet("PRAISEKING")  # Output: Hello, PRAISEKING! Welcome to the world of functions.
+
+
+
+# sources of functions in python
+# 1. built-in functions:
+print('built-in functions: input(), len(), type(), range(), print()')  # Output: built-in functions: input(), len(), type(), range(), print()
+
+# 2. user-defined functions: created by the programmer
+def add_numbers(a, b):
+    """This function takes two numbers as input and returns their sum."""
+    return a + b    
+
+result = add_numbers(5, 3)
+print(result)  # Output: 8  
+
+# 3. functions from modules: are impoted then used in the program.
+import math
+result = math.sqrt(16)
+print(result)  # Output: 4.0
+print(math.ceil(7.6))  # math.floor() rounds down to the nearest integer, while math.ceil() rounds up to the nearest integer. Output: 8
+
+
+#   TYPES OF FUNCTIONS 
+# 1. Functions with parameters: take input values
+# 2. Functions without parameters: do not take any input values
+# 3. Functions with default parameter values: use default values if no argument is provided
+# 4. Functions that return multiple values: can return tuples, lists, or dictionaries
+# 5. Nested functions: can be defined inside another function
+# 6. some have no output, some have output, some have parameters, some don't have parameters, some have both output and parameters, some have neither output nor parameters.
+
+#   PARAMETERS AND ARGUMENTS
+# parameters are variables that are defined in the function definition and are used to pass values to the function when it is called. 
+# Arguments are the actual values that are passed to the function when it is called. The number and order of arguments must match the number and order of parameters in the function definition.
+
+# def fun_name(parameters): - function definition
+# fun_name(arguments) - function call
+
+def clean_text(text):
+    print(text.strip().lower())
+    
+clean_text(' coMe heRE MAMA   ') # Output: come here mama
+
+
+# local variables are variables that are defined inside a function and can only be accessed within that function. They are created when the function is called and destroyed when the function returns.
+# global variables are variables that are defined outside of any function and can be accessed from anywhere in the program. They are created when the program starts and destroyed when the program ends.
+
+f = 2 # global variable
+
+def multiply(x):  # x is a parameter
+    y = x * f  # y is a local variable
+    print(y)
+    
+multiply(5)  # 5 is an argument
+# Output: 10
+
+
+the_rule = 'n/a' # global variable
+
+def rules():
+    the_rule = 'follow the rules' # local variable
+    print(the_rule)
+
+rules() 
+print('the rule is : ',the_rule) # output: the rule is : n/a => this takes the global variable because the local variable is only accessible within the function.
+
+
+    # POSITIONAL AND KEYWORD ARGUMENTS
+# positional arguments are passed to a function in the order in which they are defined in the function
+# keyword arguments are passed to a function using the name of the parameter, allowing them to be passed in any order.
+
+def bio(first_name, last_name, age):
+    first_name = first_name.strip().capitalize()
+    last_name = last_name.strip().capitalize()
+    full_name = first_name + ' ' + last_name
+    print(f"My name is {full_name} and I am {age} years old.")
+
+
+bio(" john ", " doe ", 30) # positional arguments
+bio(age=25, first_name="jane", last_name="smith")  # keyword arguments
+bio("  alice  ", last_name="  johnson  ", age=28) # mixed arguments - positional arguments must come before keyword arguments.
+
+# .capitalize()  → "hello WORLD" → "Hello world"
+# .title()       → "hello WORLD" → "Hello World"
+# .upper()       → "hello WORLD" → "HELLO WORLD"
+# .lower()       → "hello WORLD" → "hello world"
+
+
